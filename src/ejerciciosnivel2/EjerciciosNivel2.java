@@ -29,6 +29,36 @@ public class EjerciciosNivel2 {
     }
             return true;
     }
+    public boolean esEscaleraDePalabras2(char[][] lista){
+        for (int j=0; j<lista.length-1; j++){
+          
+        int contador = 0;
+        for( int i = 0; i<lista[0].length; i++){
+            if (lista[j][i] != lista[j+1][i]){
+                contador ++;
+            }
+        }
+        if (contador != 1){
+            return false;
+        }
+        }
+        
+        return true;
+    }
+    
+    public int comparaDosStrings(String cadena1, String cadena2){
+        for (int i=0; i< cadena1.length(); i++){
+            int contadorFallos = 0;
+                for (int j=i+1; j< cadena2.length(); j++){
+                    if (cadena1.charAt(i) != cadena2.charAt(j)){
+                        return ++contadorFallos;
+                    }else{
+                        return 0;
+                    }
+                }
+            }
+        return 0;
+    }
     
     /**
      * @param args the command line arguments
@@ -45,6 +75,8 @@ public class EjerciciosNivel2 {
         };
         EjerciciosNivel2 e = new EjerciciosNivel2();
         System.out.println(e.esEscaleraPalabras(listaPalabras));
-        
-    }
+        System.out.println(e.esEscaleraDePalabras2(listaPalabras));
+        System.out.println(e.comparaDosStrings("ATTA", "TAAT"));
+        System.out.println(e.comparaDosStrings("TTTT", "TTTA"));
+        }
     }
